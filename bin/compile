@@ -108,9 +108,9 @@ APP_VENDOR_RUNTIME="/app/$TARGET_VENDOR_DIR"
 APP_VENDOR_BUILD="$BUILD_DIR/$TARGET_VENDOR_DIR"
 
 # Setup environment variables needed to run the app
-set-env GEOS_LIBRARY_PATH "$APP_VENDOR_RUNTIME/lib"
-set-env GDAL_LIBRARY_PATH "$APP_VENDOR_RUNTIME/lib"
-set-env PROJ4_LIBRARY_PATH "$APP_VENDOR_RUNTIME/lib"
+set-env GEOS_LIBRARY_PATH "$APP_VENDOR_RUNTIME/lib/libgeos_c.so"
+set-env GDAL_LIBRARY_PATH "$APP_VENDOR_RUNTIME/lib/libgdal.so"
+set-env PROJ4_LIBRARY_PATH "$APP_VENDOR_RUNTIME/lib/libproj.so"
 set-env GDAL_DATA "$APP_VENDOR_RUNTIME/share/gdal"
 set-default-env LIBRARY_PATH "$APP_VENDOR_RUNTIME/lib"
 set-default-env LD_LIBRARY_PATH "$APP_VENDOR_RUNTIME/lib"
@@ -122,7 +122,7 @@ cp /usr/lib/x86_64-linux-gnu/libjasper.so* "$BUILD_DIR/$TARGET_VENDOR_DIR/lib/."
 
 # Set up environment variables needed during the remainder of
 # the build process.. These can be read by subsequent buildpacks
-set-export GEOS_LIBRARY_PATH "$APP_VENDOR_BUILD/lib/ibgeos_c.so"
+set-export GEOS_LIBRARY_PATH "$APP_VENDOR_BUILD/lib/libgeos_c.so"
 set-export GDAL_LIBRARY_PATH "$APP_VENDOR_BUILD/lib/libgdal.so"
 set-export PROJ4_LIBRARY_PATH "$APP_VENDOR_BUILD/lib/libproj.so"
 set-export GDAL_DATA "$APP_VENDOR_BUILD/share/gdal"
