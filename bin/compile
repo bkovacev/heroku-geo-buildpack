@@ -117,6 +117,9 @@ set-default-env LD_LIBRARY_PATH "$APP_VENDOR_RUNTIME/lib"
 set-default-env CPATH "$APP_VENDOR_RUNTIME/include"
 set-default-env PATH "$APP_VENDOR_RUNTIME/bin"
 
+# Copy libjasper since it's only available in heroku buildenv
+cp /usr/lib/x86_64-linux-gnu/libjasper.so* "$BUILD_DIR/$TARGET_VENDOR_DIR/lib/."
+
 # Set up environment variables needed during the remainder of
 # the build process.. These can be read by subsequent buildpacks
 set-export GEOS_LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
