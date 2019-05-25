@@ -122,9 +122,9 @@ cp /usr/lib/x86_64-linux-gnu/libjasper.so* "$BUILD_DIR/$TARGET_VENDOR_DIR/lib/."
 
 # Set up environment variables needed during the remainder of
 # the build process.. These can be read by subsequent buildpacks
-set-export GEOS_LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
-set-export GDAL_LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
-set-export PROJ4_LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
+set-export GEOS_LIBRARY_PATH "$APP_VENDOR_BUILD/lib/ibgeos_c.so"
+set-export GDAL_LIBRARY_PATH "$APP_VENDOR_BUILD/lib/libgdal.so"
+set-export PROJ4_LIBRARY_PATH "$APP_VENDOR_BUILD/lib/libproj.so"
 set-export GDAL_DATA "$APP_VENDOR_BUILD/share/gdal"
 set-export LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
 set-export LD_LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
